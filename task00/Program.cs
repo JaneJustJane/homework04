@@ -10,6 +10,11 @@ Console.Write("введите коэф. В2=");
 double b2 = double.Parse(Console.ReadLine() ?? "0");
 Console.Write("введите коэф. K2=");
 double k2 = double.Parse(Console.ReadLine() ?? "0");
-double x = ((b2-b1)/(k1-k2));
-double y = ((k1*b2 - k2*b1)/(k1-k2));
-Console.WriteLine($"Координаты точки пересеч.прямых М({x},{y})");
+if (k1==k2 && b1!=b2) Console.WriteLine ("Заданные прямые параллельны");
+else if (k1==k2 && b1==b2) Console.WriteLine ("Заданные прямые совпадают");
+else if (k1!=k2 && b1!=b2)
+{
+    double x = ((b2-b1)/(k1-k2));
+    double y = ((k1*b2 - k2*b1)/(k1-k2));
+    Console.WriteLine($"Координаты точки пересеч.прямых М({x};{y})");
+}
